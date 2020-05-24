@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
-public class MakePaper extends BaseCurrentProjectAction {
+public class MakePaper extends BaseCurrentExamPaperAction {
 
     private int type1number;
     private int type2number;
@@ -16,9 +16,6 @@ public class MakePaper extends BaseCurrentProjectAction {
 
     private String result;
 
-    @JsonIgnore
-    @Inject
-    protected IPaperService paperService;
 
     public String getResult() {
         return result;
@@ -66,15 +63,6 @@ public class MakePaper extends BaseCurrentProjectAction {
                     Lists.newArrayList(type1number,type2number,type3number)));
         }
     }
-
-    /**
-     * method to load entity count from service layer
-     */
-    @Override
-    protected void initEntityCount() {
-        this.count = questionService.findAll(sessionProject).size();
-    }
-
 
     /**
      * subclasses should implement this method to put business logic

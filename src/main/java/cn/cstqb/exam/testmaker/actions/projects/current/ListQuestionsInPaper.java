@@ -6,13 +6,10 @@ import cn.cstqb.exam.testmaker.entities.Question;
 import cn.cstqb.exam.testmaker.services.IPaperService;
 import cn.cstqb.exam.testmaker.services.impl.PaperServiceImpl;
 import com.google.inject.Inject;
-import com.sun.org.apache.bcel.internal.classfile.Constant;
 
 import java.util.List;
 
-public class ListQuestionsInPaper extends BaseCurrentProjectAction {
-    @Inject
-    protected IPaperService paperService;
+public class ListQuestionsInPaper extends BaseCurrentExamPaperAction {
     private List<Question> questions;
 
 //    public ListQuestionsInPaper(){
@@ -30,14 +27,6 @@ public class ListQuestionsInPaper extends BaseCurrentProjectAction {
     @Override
     public void validateInput() {
         super.validateInput();
-    }
-
-    /**
-     * method to load entity count from service layer
-     */
-    @Override
-    protected void initEntityCount() {
-        this.count = 2;//questionService.findAll(sessionProject).size();
     }
 
 

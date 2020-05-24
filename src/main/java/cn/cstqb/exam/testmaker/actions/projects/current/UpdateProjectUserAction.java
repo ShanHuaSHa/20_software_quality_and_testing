@@ -2,7 +2,7 @@ package cn.cstqb.exam.testmaker.actions.projects.current;
 
 import java.util.List;
 
-import javax.jws.soap.SOAPBinding;
+//import javax.jws.soap.SOAPBinding;
 
 import com.google.common.collect.Lists;
 
